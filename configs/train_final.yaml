@@ -1,0 +1,28 @@
+# 最終課題用: CI設定よりモデルと学習量を大きくして、PushTを実際に押せるところまで学習します。
+dataset:
+  path: data/processed/pusht_keypoints.npz
+
+model:
+  chunk_size: 16
+  dim_model: 128
+  n_heads: 4
+  dim_feedforward: 512
+  n_encoder_layers: 2
+  n_decoder_layers: 1
+  use_vae: false
+  temporal_ensemble_coeff: 0.01
+  dropout: 0.1
+
+training:
+  epochs: 1000
+  batch_size: 256
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  validation_ratio: 0.1
+  seed: 42
+  max_steps: 15000
+  torch_threads: 8
+
+output:
+  checkpoint: artifacts/checkpoints/act-final
+  metrics: artifacts/checkpoints/act-final/training_metrics.json

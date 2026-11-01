@@ -1,0 +1,14 @@
+# GitHub Actions用: 短いheadless rolloutで振る舞いの経路と閾値判定を確認します。
+evaluation:
+  checkpoint: artifacts/checkpoints/lerobot-act-ci
+  episodes: 3
+  max_steps: 100
+  seed: 1000
+  headless: true
+  save_video: false
+  video_path: artifacts/evaluation/rollout-ci.mp4
+  min_mean_reward: 0.02
+  min_mean_reward_gain: 0.015
+
+output:
+  metrics: artifacts/evaluation/metrics-ci.json

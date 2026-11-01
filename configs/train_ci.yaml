@@ -1,0 +1,28 @@
+# GitHub Actions用: LeRobot公式ACTを小さくして学習・保存経路を確認します。
+dataset:
+  path: data/processed/pusht_keypoints.npz
+
+model:
+  chunk_size: 8
+  dim_model: 32
+  n_heads: 4
+  dim_feedforward: 64
+  n_encoder_layers: 1
+  n_decoder_layers: 1
+  use_vae: false
+  temporal_ensemble_coeff: 0.01
+  dropout: 0.0
+
+training:
+  epochs: 2
+  batch_size: 128
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  validation_ratio: 0.2
+  seed: 42
+  max_steps: 20
+  torch_threads: 2
+
+output:
+  checkpoint: artifacts/checkpoints/lerobot-act-ci
+  metrics: artifacts/checkpoints/lerobot-act-ci/training_metrics.json

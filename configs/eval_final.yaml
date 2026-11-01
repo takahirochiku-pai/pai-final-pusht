@@ -1,0 +1,14 @@
+# 最終課題用: 外乱なしの成功率を、録画なしで20回分まとめて測ります。
+evaluation:
+  checkpoint: artifacts/checkpoints/act-final
+  episodes: 20
+  max_steps: 300
+  seed: 1000
+  headless: true
+  save_video: false
+  video_path: artifacts/evaluation/rollout-final.mp4
+  min_mean_reward: 0.0
+  min_mean_reward_gain: 0.0
+
+output:
+  metrics: artifacts/evaluation/metrics-final.json

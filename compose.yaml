@@ -1,0 +1,20 @@
+services:
+  workshop:
+    build:
+      context: .
+    image: roboops-workshop:local
+    init: true
+    working_dir: /workspace
+    ports:
+      - "127.0.0.1:${JUPYTER_PORT:-8888}:8888"
+    volumes:
+      - .:/workspace
+      - huggingface-cache:/root/.cache/huggingface
+    environment:
+      PYTHONPATH: /workspace/src
+      HF_HOME: /root/.cache/huggingface
+      SDL_VIDEODRIVER: dummy
+      SDL_AUDIODRIVER: dummy
+
+volumes:
+  huggingface-cache:

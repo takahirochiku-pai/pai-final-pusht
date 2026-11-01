@@ -1,0 +1,14 @@
+.git
+.github
+.DS_Store
+**/.DS_Store
+.uv-cache
+.venv
+artifacts
+data
+outputs
+.ipynb_checkpoints
+**/.ipynb_checkpoints
+__pycache__
+**/__pycache__
+*.pyc
